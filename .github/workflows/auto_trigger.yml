@@ -1,0 +1,22 @@
+name: Auto Trigger Workflow
+
+on:
+  issues:
+    types: [opened]
+  issue_comment:
+    types: [created]
+  pull_request_review_comment:
+    types: [created]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+
+      # Add your desired actions here that should run when triggered
+      # For example, you can run tests, linting, or any other relevant tasks.
+      # - name: Run tests
+      #   run: npm test
